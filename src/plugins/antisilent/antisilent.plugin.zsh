@@ -29,3 +29,8 @@ alias rezsh="omz reload"
 
 # overrides
 alias vi="vim"
+
+SECRETS_FILE="${ZSH}/custom/plugins/antisilent/secrets.zsh"
+if [ -f $SECRETS_FILE ]; then
+    source $SECRETS_FILE
+fi
