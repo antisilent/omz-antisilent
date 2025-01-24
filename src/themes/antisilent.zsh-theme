@@ -85,7 +85,7 @@ function prompt_command() {
     # PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_super_status)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}${UBAR}${ULBRACK}$(fileinfo)${URBRACK}${UBAR}${ULBRACK}$(conda_prompt_info)${URBRACK}${NEWLINE}[$] "
     # PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_super_status)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}${UBAR}${ULBRACK}$(fileinfo)${URBRACK}${UBAR}${ULBRACK}$(nodeversion)${URBRACK}${NEWLINE}[$] "
     # PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_prompt_info)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}${UBAR}${ULBRACK}$(fileinfo)${URBRACK}${UBAR}${ULBRACK}$(nodeversion)${URBRACK}${NEWLINE}[$] "
-    # RPROMPT="$(return_status)"
+    RPROMPT=""
 }
 
 precmd_functions+=prompt_command
