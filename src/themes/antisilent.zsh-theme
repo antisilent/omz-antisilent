@@ -59,7 +59,7 @@ nodeversion() {
 }
 
 return_status() {
-    echo "%(?..💀)"
+    echo "%(?.\$.%F{red}\$%{$reset_color%})"
 }
 
 conda_prompt_info() {
@@ -81,11 +81,11 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export CONDA_CHANGEPS1=false
 
 function prompt_command() {
-    PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_super_status)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}$(conda_prompt_info)$(virtualenv_prompt_info)${NEWLINE}[$] "
+    PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_super_status)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}$(conda_prompt_info)$(virtualenv_prompt_info)${NEWLINE}[$(return_status)] "
     # PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_super_status)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}${UBAR}${ULBRACK}$(fileinfo)${URBRACK}${UBAR}${ULBRACK}$(conda_prompt_info)${URBRACK}${NEWLINE}[$] "
     # PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_super_status)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}${UBAR}${ULBRACK}$(fileinfo)${URBRACK}${UBAR}${ULBRACK}$(nodeversion)${URBRACK}${NEWLINE}[$] "
     # PROMPT="${NEWLINE}${UTOPLEFT}${ULBRACK}$(userhost)${URBRACK}${UBAR}${ULBRACK}$(timedate)${URBRACK}$(git_prompt_info)${NEWLINE}${UBOTTOMLEFT}${ULBRACK}$(currentdir)${URBRACK}${UBAR}${ULBRACK}$(fileinfo)${URBRACK}${UBAR}${ULBRACK}$(nodeversion)${URBRACK}${NEWLINE}[$] "
-    RPROMPT="$(return_status)"
+    # RPROMPT="$(return_status)"
 }
 
 precmd_functions+=prompt_command
